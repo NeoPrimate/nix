@@ -1,4 +1,3 @@
-
 #!/bin/bash
 cd ~/Dotfiles
 git add -A
