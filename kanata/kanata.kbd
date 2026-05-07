@@ -4,7 +4,7 @@
 )
 
 (defsrc
-  caps ralt
+  caps ralt f10 f11 f12
 )
 
 (defalias
@@ -15,4 +15,7 @@
 (deflayer base
   (tap-hold 200 200 esc  @hyper)
   (tap-hold 200 200 ralt @meh)
+  mute
+  vold
+  volu
 )
