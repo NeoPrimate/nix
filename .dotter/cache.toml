@@ -6,6 +6,7 @@
 "helix/config.toml" = "/Users/vb/.config/helix/config.toml"
 "helix/languages.toml" = "/Users/vb/.config/helix/languages.toml"
 "helix/themes/catppuccin_macchiato.toml" = "/Users/vb/.config/helix/themes/catppuccin_macchiato.toml"
+"kanata/kanata.kbd" = "/Users/vb/.config/kanata/kanata.kbd"
 "nushell/config.nu" = "/Users/vb/Library/Application Support/nushell/config.nu"
 "nushell/env.nu" = "/Users/vb/Library/Application Support/nushell/env.nu"
 "starship.toml" = "/Users/vb/.config/starship.toml"
