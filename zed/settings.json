@@ -1,4 +1,7 @@
 {
+  "auto_update_extensions": {
+    "typst": false
+  },
   "outline_panel": {
     "dock": "left"
   },
