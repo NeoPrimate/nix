@@ -8,7 +8,7 @@
 )
 
 (defalias
-  hyper (multi lctl lalt lsft lmet)
+  hyper (multi lctl lalt lmet)
   meh   (multi lctl lalt lsft)
 )
 
