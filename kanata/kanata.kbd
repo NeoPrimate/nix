@@ -4,9 +4,15 @@
 )
 
 (defsrc
-  caps
+  caps ralt
+)
+
+(defalias
+  hyper (multi lctl lalt lsft lmet)
+  meh   (multi lctl lalt lsft)
 )
 
 (deflayer base
-  (tap-hold 200 200 esc lctl)
+  (tap-hold 200 200 esc  @hyper)
+  (tap-hold 200 200 ralt @meh)
 )
