@@ -1,23 +1,26 @@
 # Dotfiles
 
-Managed with [dotter](https://github.com/SuperCuber/dotter).
+Managed with [dotter](https://github.com/SuperCuber/dotter) and [just](https://github.com/casey/just).
 
-## Configs
+Configs: Alacritty, Aerospace, Helix, Kanata, Nushell, Starship, Yazi, Zed, Zellij, Zsh.
 
-Alacritty, Aerospace, Helix, Starship, Yazi, Zed, Zellij, Zsh
-
-## Install
+## Usage
 
 ```bash
-brew install dotter
-git clone git@github.com:NeoPrimate/Dotfiles.git ~/Dotfiles
-cd ~/Dotfiles
-dotter deploy --force
+just              # list recipes
+just sync         # commit + push changes (if any), then deploy
+just sync "msg"   # same, with custom commit message
+just pull         # pull latest, then deploy
 ```
 
-## Sync
+`just sync` is the daily driver — it's safe to run whether or not you have local changes.
+
+## Install on a new machine
 
 ```bash
-./sync-dotfiles.sh              # default commit message
-./sync-dotfiles.sh "message"    # custom commit message
+brew install dotter just kanata
+git clone git@github.com:NeoPrimate/Dotfiles.git ~/dotfiles
+cd ~/dotfiles
+dotter deploy --force
+just bootstrap-macos   # installs kanata LaunchDaemon (macOS only)
 ```
