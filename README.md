@@ -24,3 +24,7 @@ git clone git@github.com:NeoPrimate/Dotfiles.git ~/dotfiles
 cd ~/dotfiles
 dotter deploy --force
 ```
+
+```bash
+sudo launchctl config user path "/opt/homebrew/bin:/opt/homebrew/sbin:/Users/vb/.cargo/bin:/Users/vb/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+```
