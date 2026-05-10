@@ -1,15 +1,4 @@
-# if "ZELLIJ" not-in $env {
-#     zellij
-# }
-
-# if "ZELLIJ" not-in $env {
-#     "config.nu loaded, about to start zellij" | save -f /tmp/nu-trace.txt
-#     zellij
-#     "zellij exited" | save --append /tmp/nu-trace.txt
-# }
-
 if "ZELLIJ" not-in $env {
-    $env.TERM | save -f /tmp/nu-term.txt
     zellij
 }
 
