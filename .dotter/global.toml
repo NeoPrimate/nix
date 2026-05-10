@@ -1,6 +1,5 @@
 [default.files]
 "alacritty" = "~/.config/alacritty"
-"kanata" = "~/.config/kanata"
 "aerospace.toml" = "~/.config/aerospace/aerospace.toml"
 "helix" = "~/.config/helix"
 "nushell" = "~/Library/Application Support/nushell"

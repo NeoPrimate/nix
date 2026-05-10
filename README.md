@@ -2,7 +2,7 @@
 
 Managed with [dotter](https://github.com/SuperCuber/dotter) and [just](https://github.com/casey/just).
 
-Configs: Alacritty, Aerospace, Helix, Kanata, Nushell, Starship, Yazi, Zed, Zellij, Zsh.
+Configs: Alacritty, Aerospace, Helix, Nushell, Starship, Yazi, Zed, Zellij, Zsh.
 
 ## Usage
 
@@ -18,9 +18,8 @@ just pull         # pull latest, then deploy
 ## Install on a new machine
 
 ```bash
-brew install dotter just kanata
+brew install dotter just
 git clone git@github.com:NeoPrimate/Dotfiles.git ~/dotfiles
 cd ~/dotfiles
 dotter deploy --force
-just bootstrap-macos   # installs kanata LaunchDaemon (macOS only)
 ```
