@@ -2,7 +2,7 @@
 
 Managed with [dotter](https://github.com/SuperCuber/dotter) and [just](https://github.com/casey/just).
 
-Configs: Alacritty, Aerospace, Helix, Nushell, Starship, Yazi, Zed, Zellij, Zsh.
+Configs: Alacritty, Aerospace, Helix, Karabiner, Nushell, Starship, Yazi, Zed, Zellij, Zsh.
 
 ## Usage
 
@@ -19,6 +19,7 @@ just pull         # pull latest, then deploy
 
 ```bash
 brew install dotter just
+brew install --cask karabiner-elements
 git clone git@github.com:NeoPrimate/Dotfiles.git ~/dotfiles
 cd ~/dotfiles
 dotter deploy --force

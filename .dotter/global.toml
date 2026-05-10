@@ -4,6 +4,7 @@
 "helix" = "~/.config/helix"
 "nushell" = "~/Library/Application Support/nushell"
 "starship.toml" = "~/.config/starship.toml"
+"karabiner" = "~/.config/karabiner"
 "yazi" = "~/.config/yazi"
 "zed" = "~/.config/zed"
 "zellij" = "~/.config/zellij"
