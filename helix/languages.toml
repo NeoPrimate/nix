@@ -18,7 +18,7 @@ formatter = { command = "dprint", args = ["fmt", "--stdin", "md"]}
 
 [language-server.tinymist]
 command = "tinymist"
-config = { projectResolution = "lockDatabase", typstExtraArgs = ["--features", "html"], exportPdf = "onType", outputPath = "$root/target/$dir/$name", preview.background.enabled = true, preview.background.args = ["--data-plane-host=127.0.0.1:23635", "--invert-colors=never", "--open"] }
+config = { projectResolution = "lockDatabase", typstExtraArgs = ["--features", "html"], exportPdf = "onType", outputPath = "$root/target/$dir/$name", preview.background.enabled = true, preview.background.args = ["--data-plane-host=127.0.0.1:23635", "--invert-colors=never"] }
 
 [[language]]
 name = "typst"
