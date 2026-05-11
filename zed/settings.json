@@ -3,14 +3,20 @@
   "auto_update_extensions": {
     "typst": false,
   },
+  // "chat_panel": {
+  //   "button": false,
+  // },
   "outline_panel": {
     "dock": "left",
+    "button": false,
   },
   "collaboration_panel": {
     "dock": "left",
+    "button": false,
   },
   "git_panel": {
     "dock": "left",
+    "button": false,
   },
   "agent_servers": {
     "gemini": {
