@@ -5,7 +5,7 @@
 [
   {
     "label": "Tinymist: Web Preview",
-    "command": "pkill -f 'tinymist preview' ; sleep 0.3 ; tinymist preview --features html \"$ZED_FILE\" --root \"$ZED_WORKTREE_ROOT\"",
+    "command": "pkill -f 'tinymist preview' ; sleep 0.3 ; tinymist preview --features html \"$ZED_WORKTREE_ROOT/main.typ\" --root \"$ZED_WORKTREE_ROOT\"",
     "use_new_terminal": false,
     "allow_concurrent_runs": false,
   },

@@ -66,13 +66,15 @@
       },
     },
     "tinymist": {
+      "binary": {
+        "path": "/Users/vb/.local/bin/tinymist-zed",
+      },
       "settings": {
         "exportPdf": "onType",
         "outputPath": "$root/$name",
       },
       "initialization_options": {
         "projectResolution": "lockDatabase",
-        "typstExtraArgs": ["--features", "html"],
       },
     },
     "cargo-appraiser": {
