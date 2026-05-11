@@ -40,7 +40,7 @@ H = ":toggle lsp.display-inlay-hints"
 # 23635 (see languages.toml: preview.background.enabled). The --open
 # arg auto-opens the browser, so this binding is just to re-open the
 # tab if you've closed it.
-t = { v = ":sh open http://127.0.0.1:23635" }
+t = { v = ":sh open http://127.0.0.1:23635", p = ":lsp-workspace-command tinymist.pinMain", u = ":lsp-workspace-command tinymist.unpinMain" }
 
 [keys.select]
 y = ["yank", ":clipboard-yank"]
