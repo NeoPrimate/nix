@@ -1,16 +1,7 @@
-// [
-//   {
-//     "label": "Tinymist: Web Preview",
-//     "command": "open -u http://127.0.0.1:23625; tinymist preview --no-open \"$ZED_FILE\" --root \"$ZED_WORKTREE_ROOT\"",
-//     "use_new_terminal": false,
-//     "allow_concurrent_runs": false,
-//   },
-// ]
-
 [
   {
     "label": "Tinymist: Web Preview",
-    "command": "tinymist preview \"$ZED_FILE\" --root \"$ZED_WORKTREE_ROOT\"",
+    "command": "tinymist preview --features html \"$ZED_FILE\" --root \"$ZED_WORKTREE_ROOT\"",
     "use_new_terminal": false,
     "allow_concurrent_runs": false,
   },
