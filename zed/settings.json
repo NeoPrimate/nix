@@ -65,7 +65,7 @@
         "outputPath": "$root/$name",
       },
       "initialization_options": {
-        "projectResolution": "lockDatabase",
+        // "projectResolution": "lockDatabase",
         "typstExtraArgs": ["--features", "html", "src/main.typ"],
       },
     },
