@@ -67,6 +67,12 @@
       "initialization_options": {
         "projectResolution": "lockDatabase",
         "typstExtraArgs": ["--features", "html"],
+        "preview": {
+          "background": {
+            "enabled": true,
+            "args": ["--data-plane-host=127.0.0.1:23625", "--invert-colors=auto"],
+          },
+        },
       },
     },
     "cargo-appraiser": {
