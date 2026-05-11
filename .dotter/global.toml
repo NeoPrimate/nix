@@ -9,3 +9,4 @@
 "zed" = "~/.config/zed"
 "zellij" = "~/.config/zellij"
 "zshrc" = "~/.zshrc"
+"bin/typst-preview" = "~/.local/bin/typst-preview"
