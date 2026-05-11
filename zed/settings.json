@@ -67,17 +67,6 @@
       "initialization_options": {
         "projectResolution": "lockDatabase",
         "typstExtraArgs": ["--features", "html"],
-        "preview": {
-          "refresh": "onType",
-          "background": {
-            "enabled": true,
-            "args": [
-              "--data-plane-host=127.0.0.1:23635",
-              "--invert-colors=auto",
-              "--refresh-style=onType",
-            ],
-          },
-        },
       },
     },
     "cargo-appraiser": {
@@ -106,9 +95,7 @@
     "dock": "right",
   },
   "format_on_save": "on",
-  // "autosave": {
-  //   "after_delay": {
-  //     "milliseconds": 10
-  //   }
-  // }
+  "autosave": {
+    "after_delay": { "milliseconds": 200 },
+  },
 }

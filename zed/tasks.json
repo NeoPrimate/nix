@@ -1,12 +1,12 @@
-// Live preview is spawned by the tinymist LSP itself — see
-// lsp.tinymist.initialization_options.preview.background in settings.json.
-// This task just opens the browser at the LSP preview URL.
+// Zed currently filters tinymist's LSP settings, so the LSP-spawned
+// background preview (which would give true on-type updates) cannot be
+// configured from settings.json. Workaround: run the standalone preview CLI
+// and rely on Zed autosave (200ms) to get near-live updates on file save.
 [
   {
-    "label": "Tinymist: Open Live Preview",
-    "command": "open http://127.0.0.1:23635",
+    "label": "Tinymist: Web Preview",
+    "command": "tinymist preview --features html \"$ZED_FILE\" --root \"$ZED_WORKTREE_ROOT\"",
     "use_new_terminal": false,
-    "allow_concurrent_runs": true,
-    "reveal": "never",
+    "allow_concurrent_runs": false,
   },
 ]
