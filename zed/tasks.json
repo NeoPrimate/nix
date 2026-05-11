@@ -6,6 +6,7 @@
 //     "allow_concurrent_runs": false,
 //   },
 // ]
+
 [
   {
     "label": "Typst Preview",
@@ -13,6 +14,6 @@
     "args": ["$ZED_FILE", "$ZED_WORKTREE_ROOT"],
     "use_new_terminal": false,
     "allow_concurrent_runs": false,
-    "reveal": "never"
-  }
+    "reveal": "never",
+  },
 ]
