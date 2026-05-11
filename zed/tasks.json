@@ -9,11 +9,9 @@
 
 [
   {
-    "label": "Typst Preview",
-    "command": "typst-preview",
-    "args": ["$ZED_FILE", "$ZED_WORKTREE_ROOT"],
+    "label": "Tinymist: Web Preview",
+    "command": "tinymist preview \"$ZED_FILE\" --root \"$ZED_WORKTREE_ROOT\"",
     "use_new_terminal": false,
     "allow_concurrent_runs": false,
-    "reveal": "never",
   },
 ]
