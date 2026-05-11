@@ -36,7 +36,8 @@ q = ":reflow"
 # q = ":quit"
 # w = ":write"
 H = ":toggle lsp.display-inlay-hints"
-t = { v = ":sh open http://127.0.0.1:23635" }
+# t = { v = ":sh open http://127.0.0.1:23635" }
+t = { v = ":sh typst-preview \"%{working_directory}/%{buffer_name}\" \"%{working_directory}\"" }
 
 [keys.select]
 y = ["yank", ":clipboard-yank"]
@@ -44,4 +45,7 @@ p = ["paste_after", ":clipboard-paste-after"]
 
 # [keys.normal.space.f]
 # d = ":sh zellij run -fc -- y"
+# 
+
+
 
