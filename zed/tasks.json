@@ -1,5 +1,12 @@
-// The standalone "tinymist preview" CLI only watches the file on disk
-// (refresh on save). Live (on-type) preview is spawned by the tinymist
-// LSP itself — see lsp.tinymist.initialization_options.preview.background
-// in settings.json. Open the LSP preview at http://127.0.0.1:23635.
-[]
+// Live preview is spawned by the tinymist LSP itself — see
+// lsp.tinymist.initialization_options.preview.background in settings.json.
+// This task just opens the browser at the LSP preview URL.
+[
+  {
+    "label": "Tinymist: Open Live Preview",
+    "command": "open http://127.0.0.1:23635",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": true,
+    "reveal": "never",
+  },
+]
