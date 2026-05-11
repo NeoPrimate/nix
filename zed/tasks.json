@@ -1,8 +1,5 @@
-[
-  {
-    "label": "Tinymist: Web Preview",
-    "command": "tinymist preview --features html \"$ZED_FILE\" --root \"$ZED_WORKTREE_ROOT\"",
-    "use_new_terminal": false,
-    "allow_concurrent_runs": false,
-  },
-]
+// The standalone "tinymist preview" CLI only watches the file on disk
+// (refresh on save). Live (on-type) preview is spawned by the tinymist
+// LSP itself — see lsp.tinymist.initialization_options.preview.background
+// in settings.json. Open the LSP preview at http://127.0.0.1:23635.
+[]
