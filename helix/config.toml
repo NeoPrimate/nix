@@ -36,18 +36,27 @@ q = ":reflow"
 # q = ":quit"
 # w = ":write"
 H = ":toggle lsp.display-inlay-hints"
-# Live preview of the *focused* file via the tinymist LSP (true on-type
-# update from the in-memory buffer — VSCode-equivalent). space+t+v kills
-# any prior preview task, starts a new one for the current buffer on a
-# fixed port, and opens the browser. space+t+p / space+t+u still pin /
-# unpin main for LSP diagnostics; preview is now independent of pin.
+# Live preview that follows the focused file (VSCode-equivalent
+# "Preview current file"). startDefaultPreview spawns a *browsing*
+# preview — its primary file auto-updates as you switch buffers, so
+# you don't have to retrigger when moving between chapters. Browser
+# tab on a fixed port 23635 (configured in languages.toml under
+# preview.browsing.args). Re-pressing this is safe: if the preview is
+# already running, the start command errors silently and helix moves
+# on to reopen the URL.
 t.v = [
-  ':lsp-workspace-command tinymist.doKillPreview "ieor-preview"',
-  ':lsp-workspace-command tinymist.doStartPreview "[\"--task-id\",\"ieor-preview\",\"--refresh-style\",\"onType\",\"--data-plane-host\",\"127.0.0.1:23635\",\"--partial-rendering\",\"true\",\"--invert-colors=never\",\"%{file_path_absolute}\"]"',
+  ":lsp-workspace-command tinymist.startDefaultPreview",
   ":sh open http://127.0.0.1:23635",
 ]
-t.p = ":lsp-workspace-command tinymist.pinMain"
-t.u = ":lsp-workspace-command tinymist.unpinMain"
+# Pin / unpin `main.typ` as the LSP's compilation entry — this only
+# affects diagnostics and cross-file label resolution; it no longer
+# affects the preview (the browsing preview ignores pin). Unpin is a
+# pinMain call with JSON null. tinymist 0.14.6 requires args[0] to be
+# present even when it's Option<PathBuf>, hence the explicit path /
+# null. The pin path is the focused buffer's absolute path — typically
+# you pin while looking at main.typ itself.
+t.p = ':lsp-workspace-command tinymist.pinMain "%{file_path_absolute}"'
+t.u = ":lsp-workspace-command tinymist.pinMain null"
 
 [keys.select]
 y = ["yank", ":clipboard-yank"]

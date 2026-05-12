@@ -24,6 +24,14 @@ typstExtraArgs = ["--features", "html"]
 exportPdf = "onType"
 outputPath = "$root/target/$dir/$name"
 
+# Configure the *browsing* preview (PreviewKind::Browsing) — it follows the
+# LSP's currently-focused file rather than the pinned main. Started on
+# demand via `tinymist.startDefaultPreview` (bound to space+t+v in
+# helix/config.toml). Background preview is intentionally disabled here so
+# it doesn't claim port 23635 with a pinned-main preview.
+[language-server.tinymist.config.preview.browsing]
+args = ["--data-plane-host=127.0.0.1:23635", "--invert-colors=never", "--partial-rendering=true"]
+
 [[language]]
 name = "typst"
 language-servers = ["tinymist"]
