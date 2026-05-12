@@ -29,8 +29,13 @@ outputPath = "$root/target/$dir/$name"
 # demand via `tinymist.startDefaultPreview` (bound to space+t+v in
 # helix/config.toml). Background preview is intentionally disabled here so
 # it doesn't claim port 23635 with a pinned-main preview.
+# --partial-rendering disabled: it has a known incremental-diff bug that
+# can overlay the last page onto the first when typst re-lays out the
+# document (e.g. when the `show link: it => context { query(...) }` rule
+# in lib/formatting.typ triggers an introspection pass). Full re-render
+# per edit is slightly slower but artifact-free.
 [language-server.tinymist.config.preview.browsing]
-args = ["--data-plane-host=127.0.0.1:23635", "--invert-colors=never", "--partial-rendering=true"]
+args = ["--data-plane-host=127.0.0.1:23635", "--invert-colors=never", "--partial-rendering=false"]
 
 [[language]]
 name = "typst"
