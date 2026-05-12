@@ -36,11 +36,18 @@ q = ":reflow"
 # q = ":quit"
 # w = ":write"
 H = ":toggle lsp.display-inlay-hints"
-# Live preview: helix's tinymist LSP spawns a background preview on
-# 23635 (see languages.toml: preview.background.enabled). The --open
-# arg auto-opens the browser, so this binding is just to re-open the
-# tab if you've closed it.
-t = { v = ":sh open http://127.0.0.1:23635", p = ":lsp-workspace-command tinymist.pinMain", u = ":lsp-workspace-command tinymist.unpinMain" }
+# Live preview of the *focused* file via the tinymist LSP (true on-type
+# update from the in-memory buffer — VSCode-equivalent). space+t+v kills
+# any prior preview task, starts a new one for the current buffer on a
+# fixed port, and opens the browser. space+t+p / space+t+u still pin /
+# unpin main for LSP diagnostics; preview is now independent of pin.
+t.v = [
+  ':lsp-workspace-command tinymist.doKillPreview "ieor-preview"',
+  ':lsp-workspace-command tinymist.doStartPreview "[\"--task-id\",\"ieor-preview\",\"--refresh-style\",\"onType\",\"--data-plane-host\",\"127.0.0.1:23635\",\"--partial-rendering\",\"true\",\"--invert-colors=never\",\"%{file_path_absolute}\"]"',
+  ":sh open http://127.0.0.1:23635",
+]
+t.p = ":lsp-workspace-command tinymist.pinMain"
+t.u = ":lsp-workspace-command tinymist.unpinMain"
 
 [keys.select]
 y = ["yank", ":clipboard-yank"]
