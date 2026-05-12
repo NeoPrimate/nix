@@ -2,7 +2,7 @@ theme = "catppuccin_macchiato"
 # theme = "tokyonight_storm"
 
 [editor]
-line-number = "absolute"
+line-number = "relative"
 mouse = false
 bufferline = "multiple"
 # end-of-line-diagnostics = "hint"
@@ -64,7 +64,4 @@ p = ["paste_after", ":clipboard-paste-after"]
 
 # [keys.normal.space.f]
 # d = ":sh zellij run -fc -- y"
-# 
-
-
-
+#
