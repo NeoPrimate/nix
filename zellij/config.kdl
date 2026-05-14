@@ -31,7 +31,7 @@ theme "catppuccin-macchiato"
 Default: "tokio-night-storm"
 
 on_force_close "quit"
-mouse_mode true
+mouse_mode false
 simplified_ui true
 
 // keybinds {
