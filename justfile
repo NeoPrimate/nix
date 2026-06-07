@@ -15,14 +15,14 @@ sync message="update":
     else
         echo "Nothing to commit."
     fi
-    darwin-rebuild switch --flake .#{{ host }}
+    sudo darwin-rebuild switch --flake .#{{ host }}
 
 # Pull latest and re-activate
 pull:
     git pull
-    darwin-rebuild switch --flake .#{{ host }}
+    sudo darwin-rebuild switch --flake .#{{ host }}
 
 # Bump flake inputs and re-activate
 update:
     nix flake update
-    darwin-rebuild switch --flake .#{{ host }}
+    sudo darwin-rebuild switch --flake .#{{ host }}
