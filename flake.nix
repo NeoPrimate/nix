@@ -16,7 +16,7 @@
         };
     in {
       homeConfigurations = {
-        "vb@mbp" = mkHome ./home/hosts/mbp.nix "aarch64-darwin";
+        "vb@vladimirs-macbook-pro" = mkHome ./home/hosts/vladimirs-macbook-pro.nix "aarch64-darwin";
       };
     };
 }
