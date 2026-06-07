@@ -9,5 +9,6 @@
 "zed" = "~/.config/zed"
 "zellij" = "~/.config/zellij"
 "ghostty" = "~/.config/ghostty"
+"casty" = "~/.config/casty"
 "zshrc" = "~/.zshrc"
 "bin/typst-preview" = "~/.local/bin/typst-preview"
