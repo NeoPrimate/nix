@@ -2,6 +2,8 @@ $env.PATH = (
     $env.PATH
     | split row (char esep)
     | prepend [
+        '/run/current-system/sw/bin'
+        $"/etc/profiles/per-user/($env.USER)/bin"
         '/nix/var/nix/profiles/default/bin'
         $"($env.HOME)/.nix-profile/bin"
         '/opt/homebrew/bin'
