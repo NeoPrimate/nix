@@ -15,14 +15,14 @@ sync message="update":
     else
         echo "Nothing to commit."
     fi
-    home-manager switch --flake .#vb@{{ host }}
+    darwin-rebuild switch --flake .#{{ host }}
 
 # Pull latest and re-activate
 pull:
     git pull
-    home-manager switch --flake .#vb@{{ host }}
+    darwin-rebuild switch --flake .#{{ host }}
 
 # Bump flake inputs and re-activate
 update:
     nix flake update
-    home-manager switch --flake .#vb@{{ host }}
+    darwin-rebuild switch --flake .#{{ host }}
