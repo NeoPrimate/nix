@@ -1,9 +1,11 @@
+host := `hostname -s | tr '[:upper:]' '[:lower:]'`
+
 # List recipes
 default:
     @just --list
 
-# Commit + push any changes (if dirty), then deploy
-sync message="update configs":
+# Commit + push if dirty, then activate this host
+sync message="update":
     #!/usr/bin/env bash
     set -euo pipefail
     git add -A
@@ -13,9 +15,14 @@ sync message="update configs":
     else
         echo "Nothing to commit."
     fi
-    dotter deploy --force
+    home-manager switch --flake .#vb@{{ host }}
 
-# Pull latest and re-deploy
+# Pull latest and re-activate
 pull:
     git pull
-    dotter deploy --force
+    home-manager switch --flake .#vb@{{ host }}
+
+# Bump flake inputs and re-activate
+update:
+    nix flake update
+    home-manager switch --flake .#vb@{{ host }}

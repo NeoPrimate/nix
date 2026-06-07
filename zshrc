@@ -30,4 +30,3 @@ function y() {
 	rm -f -- "$tmp"
 }
 
-alias dotfiles='git --git-dir=$HOME/Dotfiles --work-tree=$HOME'

@@ -1,30 +1,32 @@
-# Dotfiles
+# nix
 
-Managed with [dotter](https://github.com/SuperCuber/dotter) and [just](https://github.com/casey/just).
+Personal Nix config, managed with [home-manager](https://github.com/nix-community/home-manager) and [just](https://github.com/casey/just).
 
-Configs: Alacritty, Aerospace, Helix, Karabiner, Nushell, Starship, Yazi, Zed, Zellij, Zsh.
+Configs: Alacritty, Aerospace, Ghostty, Helix, Karabiner, Nushell, Starship, Yazi, Zed, Zellij, Zsh.
 
 ## Usage
 
 ```bash
 just              # list recipes
-just sync         # commit + push changes (if any), then deploy
+just sync         # commit + push changes (if any), then activate
 just sync "msg"   # same, with custom commit message
-just pull         # pull latest, then deploy
+just pull         # pull latest, then activate
+just update       # bump flake inputs, then activate
 ```
-
-`just sync` is the daily driver — it's safe to run whether or not you have local changes.
 
 ## Install on a new machine
 
 ```bash
-brew install dotter just
-brew install --cask karabiner-elements
-git clone git@github.com:NeoPrimate/Dotfiles.git ~/dotfiles
-cd ~/dotfiles
-dotter deploy --force
-```
+# 1. Install Nix (https://nixos.org/download) and just
+brew install just
 
-```bash
-sudo launchctl config user path "/opt/homebrew/bin:/opt/homebrew/sbin:/Users/vb/.cargo/bin:/Users/vb/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+# 2. Clone the repo
+git clone git@github.com:NeoPrimate/nix.git ~/nix
+cd ~/nix
+
+# 3. Add a host file for this machine: home/hosts/<hostname>.nix
+#    Add it to flake.nix under homeConfigurations.
+
+# 4. First activation
+nix run home-manager/release-26.05 -- switch --flake .#vb@<hostname> -b bak
 ```
