@@ -43,6 +43,6 @@ simplified_ui true
 //     }
 // }
 
-default_shell "/opt/homebrew/bin/nu"
+default_shell "/etc/profiles/per-user/vb/bin/nu"
 
 show_startup_tips false

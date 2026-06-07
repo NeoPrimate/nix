@@ -5,7 +5,7 @@
   _module.args.theme = {
     helix     = "catppuccin_macchiato";
     alacritty = "catppuccin_macchiato";
-    ghostty   = "catppuccin-macchiato";
+    ghostty   = "Catppuccin Macchiato";
     zellij    = "catppuccin-macchiato";
     zed       = "Catppuccin Macchiato - No Italics";
   };

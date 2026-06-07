@@ -25,7 +25,7 @@ mods = "Shift"
 chars = "\u001B\r"
 
 [terminal]
-shell.program = "/opt/homebrew/bin/nu"
+shell.program = "/etc/profiles/per-user/vb/bin/nu"
 
 [window]
 opacity = 0.75
