@@ -24,6 +24,9 @@
     },
     "claude-acp": {
       "favorite_config_option_values": {
+        "effort": [
+          "high"
+        ],
         "model": ["default"],
       },
       "type": "registry",
@@ -31,8 +34,9 @@
   },
   "agent": {
     "default_model": {
+      "effort": "high",
       "provider": "anthropic",
-      "model": "claude-opus-4-6-1m-context-thinking-latest",
+      "model": "claude-opus-4-7",
       "enable_thinking": true,
     },
     "dock": "left",
