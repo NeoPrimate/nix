@@ -1,5 +1,6 @@
 { pkgs, ... }: {
   imports = [
+    ./theme.nix
     ./packages.nix
     ./dotfiles.nix
   ];
