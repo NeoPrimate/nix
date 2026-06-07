@@ -15,6 +15,12 @@
     fzf
     opencode
     ollama
+    jq
+
+    # Languages
+    python3
+    uv          # python venv + package manager
+    rustup      # rust toolchain manager (cargo, rustc via rustup install stable)
 
     # GUI
     alacritty
