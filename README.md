@@ -56,22 +56,20 @@ just update       # nix flake update, then activate
 # 1. Install Determinate Nix
 curl -fsSL https://install.determinate.systems/nix | sh -s -- install
 
-# 2. Install brew (required for the brew casks declared in darwin/common.nix)
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-# 3. Clone the repo
+# 2. Clone the repo
 git clone git@github.com:NeoPrimate/nix.git ~/nix
 cd ~/nix
 
-# 4. Add a host file matching this machine's hostname:
+# 3. Add a host file matching this machine's hostname:
 #    home/hosts/<hostname>.nix
 #    Add it to flake.nix under darwinConfigurations.
 
-# 5. First activation (bootstrap)
+# 4. First activation (bootstrap)
+#    Installs brew, all declared casks/formulae, and applies all dotfiles.
 sudo nix run github:LnL7/nix-darwin/nix-darwin-26.05#darwin-rebuild -- \
   switch --flake .#<hostname>
 
-# 6. From here on, use:
+# 5. From here on, use:
 just sync
 ```
 
