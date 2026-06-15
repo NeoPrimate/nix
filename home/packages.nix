@@ -22,7 +22,7 @@
     uv          # python venv + package manager
     rustup      # rust toolchain manager (cargo, rustc via rustup install stable)
     typst       # typesetting system
-    lean4
+    elan        # lean toolchain manager (lean, lake via elan default stable)
 
     # GUI
     alacritty
