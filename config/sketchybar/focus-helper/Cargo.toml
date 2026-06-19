@@ -1,0 +1,19 @@
+[package]
+name = "aerospace-sketchybar-focus"
+version = "0.1.0"
+edition = "2021"
+description = "Move the SketchyBar workspace highlight on aerospace switch, over IPC"
+
+[[bin]]
+name = "aerospace-sketchybar-focus"
+path = "src/main.rs"
+
+[dependencies]
+sketchybar-rs = "0.2"
+
+[profile.release]
+opt-level = 3
+lto = true
+strip = true
+panic = "abort"
+codegen-units = 1

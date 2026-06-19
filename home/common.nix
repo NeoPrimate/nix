@@ -3,6 +3,7 @@
     ./theme.nix
     ./packages.nix
     ./dotfiles.nix
+    ./sketchybar.nix
   ];
 
   home.username = "vb";

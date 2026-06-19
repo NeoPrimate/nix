@@ -4,7 +4,9 @@
 # changes and on a slow timer — NOT on the critical workspace-switch path.
 source "$HOME/.config/sketchybar/colors.sh"
 source "$(command -v icon_map.sh)"   # provides __icon_map -> $icon_result
-STATE="${TMPDIR:-/tmp}/sketchybar_aerospace_state.sh"
+# Literal /tmp (not $TMPDIR): the Rust focus helper reads this exact path, and
+# macOS gives daemons a per-user $TMPDIR that aerospace's child wouldn't share.
+STATE="/tmp/sketchybar_spaces"
 
 FOCUSED="${FOCUSED:-$(aerospace list-workspaces --focused)}"
 ALL_WS="$(aerospace list-workspaces --all | tr '\n' ' ')"
@@ -22,13 +24,15 @@ while IFS='|' read -r sid app; do
   esac
 done < <(aerospace list-windows --all --format '%{workspace}|%{app-name}')
 
-# Persist snapshot the fast path can `source` (ALL_WS + ws_<sid> vars).
+# Cache for the Rust focus helper: which workspaces exist, and which are non-empty.
+nonempty=""
+for sid in $ALL_WS; do
+  var="ws_${sid//[^a-zA-Z0-9]/_}"
+  [ -n "${!var}" ] && nonempty="$nonempty$sid "
+done
 {
-  printf 'ALL_WS=%q\n' "$ALL_WS"
-  for sid in $ALL_WS; do
-    var="ws_${sid//[^a-zA-Z0-9]/_}"
-    printf '%s=%q\n' "$var" "${!var}"
-  done
+  printf 'ALL %s\n' "$ALL_WS"
+  printf 'NONEMPTY %s\n' "$nonempty"
 } > "$STATE"
 
 # Repaint everything (icons may have changed).

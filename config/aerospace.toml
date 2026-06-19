@@ -5,10 +5,11 @@
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
 after-startup-command = []
 
-# Move the SketchyBar workspace highlight. Runs the focus script DIRECTLY (no
-# shell wrapper, no sketchybar event round-trip) for sub-frame latency; the
-# script reads $AEROSPACE_FOCUSED_WORKSPACE / $AEROSPACE_PREV_WORKSPACE.
-exec-on-workspace-change = ['/Users/vb/.config/sketchybar/plugins/aerospace_focus.sh']
+# Move the SketchyBar workspace highlight. Runs the compiled Rust helper DIRECTLY
+# (absolute path — aerospace's PATH is minimal; the helper talks to sketchybar
+# over IPC so it needs nothing else). Reads $AEROSPACE_FOCUSED_WORKSPACE /
+# $AEROSPACE_PREV_WORKSPACE from the env aerospace sets.
+exec-on-workspace-change = ['/etc/profiles/per-user/vb/bin/aerospace-sketchybar-focus']
 
 # Start AeroSpace at login
 start-at-login = true

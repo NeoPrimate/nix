@@ -13,3 +13,6 @@
 # Logs / temp
 *.log
 *.tmp
+
+# Rust build artifacts (sketchybar focus helper)
+config/sketchybar/focus-helper/target/

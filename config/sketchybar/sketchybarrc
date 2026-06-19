@@ -40,9 +40,9 @@ sketchybar --default \
 
 ##### Aerospace workspaces (left) #####
 # One item per workspace. The highlight is moved directly by aerospace's
-# exec-on-workspace-change (-> plugins/aerospace_focus.sh), bypassing any
-# sketchybar event for minimal latency. A hidden observer only handles the
-# heavier app-icon recompute on app/window changes.
+# exec-on-workspace-change (-> the aerospace-sketchybar-focus Rust helper, which
+# talks to sketchybar over IPC), bypassing any sketchybar event for minimal
+# latency. A hidden observer only handles the heavier app-icon recompute.
 for sid in $(aerospace list-workspaces --all); do
   sketchybar --add item space."$sid" left \
     --set space."$sid" \
@@ -55,8 +55,9 @@ for sid in $(aerospace list-workspaces --all); do
 done
 
 # Hidden observer (updates=on so it runs while not drawn): full app-icon
-# recompute on app/window changes + a slow safety timer. Workspace-switch
-# highlighting is handled out-of-band by aerospace_focus.sh (see above).
+# recompute on app/window changes + a slow safety timer. It also writes the
+# /tmp/sketchybar_spaces cache the Rust focus helper reads. Workspace-switch
+# highlighting is handled out-of-band by that helper (see above).
 sketchybar --add item aerospace_icons left \
   --set aerospace_icons drawing=off updates=on update_freq=10 \
     script="$PLUGIN_DIR/aerospace_icons.sh" \
