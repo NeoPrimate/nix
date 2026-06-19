@@ -11,7 +11,7 @@ APP_FONT="sketchybar-app-font:Regular:16.0" # per-app icon glyphs
 
 ##### Bar #####
 sketchybar --bar \
-  height=34 \
+  height=37 \
   position=top \
   sticky=on \
   padding_left=8 \

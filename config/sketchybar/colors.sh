@@ -19,6 +19,6 @@ export PEACH=0xfff5a97f
 export RED=0xffed8796
 
 # Roles
-export BAR_COLOR=0xff24273a   # bar background
+export BAR_COLOR=0x00000000   # bar background (transparent; items keep their pills)
 export ITEM_BG=0xff363a4f     # default item pill
 export ACCENT=$MAUVE          # focused workspace
