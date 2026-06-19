@@ -32,6 +32,8 @@ in {
 
     "karabiner/karabiner.json".source = link "${repo}/config/karabiner/karabiner.json";
 
+    "sketchybar".source = link "${repo}/config/sketchybar";
+
     "starship.toml".source = link "${repo}/config/starship.toml";
 
     "yazi/yazi.toml".source = link "${repo}/config/yazi/yazi.toml";

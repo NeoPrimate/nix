@@ -5,6 +5,13 @@
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
 after-startup-command = []
 
+# Notify SketchyBar whenever the focused workspace changes so it can re-render
+# the workspace items (highlight + per-app icons).
+exec-on-workspace-change = [
+    '/bin/bash', '-c',
+    'sketchybar --trigger aerospace_workspace_change FOCUSED=$AEROSPACE_FOCUSED_WORKSPACE',
+]
+
 # Start AeroSpace at login
 start-at-login = true
 

@@ -17,6 +17,26 @@
 
   programs.zsh.enable = true;
 
+  # ---- Fonts ----
+  # Registered system-wide with macOS. Hack Nerd Font supplies the bar's glyph
+  # icons; sketchybar-app-font supplies the per-app workspace icons.
+  fonts.packages = with pkgs; [
+    nerd-fonts.hack
+    sketchybar-app-font
+  ];
+
+  # ---- SketchyBar ----
+  # Status bar driven by aerospace. Config lives in ~/.config/sketchybar
+  # (symlinked from this repo via home/dotfiles.nix). extraPackages are placed
+  # on the launchd agent's PATH so the plugin scripts can find them:
+  #   - aerospace: query workspaces / windows
+  #   - sketchybar-app-font: ships icon_map.sh (app-name -> glyph)
+  #   - jq: general plugin use
+  services.sketchybar = {
+    enable = true;
+    extraPackages = with pkgs; [ aerospace sketchybar-app-font jq ];
+  };
+
   # ---- Homebrew ----
   # Brew itself must already be installed (it is). This declares the
   # minimal set of brew packages nix-darwin will keep installed.
