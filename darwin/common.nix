@@ -46,13 +46,12 @@
   homebrew = {
     enable = true;
     taps  = [ "typewhisper/tap" ];
-    brews = [];
+    brews = [ "tuxedo" ];
     casks = [
       "typewhisper"
       "cleanmymac"
       "karabiner-elements"
       "ghostty"
-      "tuxedo"
     ];
   };
 
