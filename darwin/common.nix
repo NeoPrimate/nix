@@ -52,6 +52,7 @@
       "cleanmymac"
       "karabiner-elements"
       "ghostty"
+      "tuxedo"
     ];
   };
 
