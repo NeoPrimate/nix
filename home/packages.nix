@@ -14,7 +14,7 @@
     bat
     fzf
     opencode
-    ollama
+    # ollama: installed + run as a launchd agent via services.ollama (home/common.nix)
     jq
 
     # Languages
@@ -34,6 +34,8 @@
     # GUI
     alacritty
     zed-editor
+    # `code .` opens the current dir in Zed
+    (writeShellScriptBin "code" ''exec ${zed-editor}/bin/zeditor "$@"'')
     aerospace
     raycast
     # ghostty: macOS build not in nixpkgs (linux-only); declared as brew cask
