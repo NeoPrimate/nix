@@ -67,9 +67,10 @@
       # supercollider: nixpkgs package is Linux-only (meta.platforms); needed
       # as the synth engine behind Vortex (see home/packages.nix's liblo).
       "supercollider"
-      # ollama: cask gives the Metal-accelerated Ollama.app; the nixpkgs
+      # ollama-app: cask gives the Metal-accelerated Ollama.app; the nixpkgs
       # ollama on darwin ships CPU-only ggml (no libggml-metal), ~5x slower.
-      "ollama"
+      # Cask is "ollama-app" ("ollama" is the deprecated alias).
+      "ollama-app"
     ];
   };
 
