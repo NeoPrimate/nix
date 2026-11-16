@@ -12,6 +12,6 @@
 
   programs.home-manager.enable = true;
 
-  # Ollama server as a launchd user agent (localhost:11434); also puts `ollama` on PATH.
-  services.ollama.enable = true;
+  # Ollama runs via the brew cask (darwin/common.nix) — Ollama.app ships Metal;
+  # nixpkgs' ollama on darwin is CPU-only.
 }
