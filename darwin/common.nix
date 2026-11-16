@@ -62,15 +62,19 @@
     casks = [
       "typewhisper"
       "cleanmymac"
-      "karabiner-elements"
       "ghostty"
       # supercollider: nixpkgs package is Linux-only (meta.platforms); needed
       # as the synth engine behind Vortex (see home/packages.nix's liblo).
       "supercollider"
-      # ollama-app: cask gives the Metal-accelerated Ollama.app; the nixpkgs
-      # ollama on darwin ships CPU-only ggml (no libggml-metal), ~5x slower.
-      # Cask is "ollama-app" ("ollama" is the deprecated alias).
-      "ollama-app"
+      # Temporarily unmanaged under macOS 27.2 — `brew bundle install` fails
+      # with "unknown or unsupported macOS version: :dunno" for any cask with
+      # a macOS >= N requirement, because brew's version detector returns
+      # :dunno on 27.2 beta. Both apps are already installed in /Applications
+      # (karabiner-elements via brew list --cask, ollama-app manual drop-in
+      # providing the Metal-accelerated Ollama.app). Re-add when brew ships
+      # macOS 27 support:
+      # "karabiner-elements"
+      # "ollama-app"
     ];
   };
 
